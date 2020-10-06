@@ -1,26 +1,43 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 
-import UserList from './components/UsersList';
+import Signup from './components/Signup';
+import Login from './components/Login';
+import Home from './components/Home';
+import Goals from './components/Goals';
+import Holdings from './components/Holdings';
 
 
 function App() {
   console.log("____Rendering app_____")
   return (
     <BrowserRouter>
-        <nav>
-            <ul>
-                <li><NavLink to="/" activeclass="active">Home</NavLink></li>
-                <li><NavLink to="/users" activeclass="active">Users</NavLink></li>
-            </ul>
-        </nav>
         <Switch>
-            <Route path="/users">
-                <UserList />
+            <Route path="/signup">
+                <Signup />
             </Route>
-
+            <Route path="/login">
+                <Login />
+            </Route>
             <Route path="/">
-                <h1>My Home Page</h1>
+                  <nav>
+                      <ul>
+                          <li><NavLink to="/" activeclass="active">Home</NavLink></li>
+                          <li><NavLink to="/goals" activeclass="active">Goals</NavLink></li>
+                          <li><NavLink to="/stock-holdings" activeclass="active">Stock Holdings</NavLink></li>
+                      </ul>
+                  </nav>
+                  <Switch>
+                      <Route path="/goals">
+                          <Goals />
+                      </Route>
+                      <Route path="/stock-holdings">
+                          <Holdings />
+                      </Route>
+                      <Route path="/">
+                          <Home />
+                      </Route>
+                  </Switch>
             </Route>
         </Switch>
     </BrowserRouter>
