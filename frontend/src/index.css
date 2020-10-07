@@ -17,3 +17,10 @@ button:hover {
     background-color: rgb(29, 170, 145);
 }
 
+button:disabled {
+  opacity: 0.3;
+}
+
+button:enabled {
+  transition: 0.2s;
+}
