@@ -6,12 +6,14 @@ from flask_migrate import Migrate
 
 from .models import db, User
 from .api.user_routes import user_routes
+from .api.session_routes import session_routes
 
 from .config import Config
 
 app = Flask(__name__)
 app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
+app.register_blueprint(session_routes, url_prefix='/api/session')
 db.init_app(app)
 Migrate(app, db)
 
