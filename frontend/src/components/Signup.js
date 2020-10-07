@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { signup } from "../store/auth";
@@ -29,7 +29,6 @@ function Signup() {
       <div className="signup-page">
         <div className="signup-form-container">
           <img
-            id="logo"
             className="signup-logo"
             src={logo}
             alt="Unbroke logo"

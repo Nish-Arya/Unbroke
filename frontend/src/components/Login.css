@@ -1,16 +1,16 @@
-.signup-page {
+.login-page {
     display: flex;
     background-color: #f0ffff;
     height: 100vh;
     width: 100vw;
 }
 
-.signup-form-container {
+.login-form-container {
     display: flex;
     flex-direction: column;
     background-color: white;
     margin: auto auto;
-    height: 70vh;
+    height: 60vh;
     width: 29vw;
     border: 1px solid lightgrey;
     border-radius: 5px;
@@ -18,45 +18,51 @@
     align-items: center;
 }
 
-.signup-form {
+.login-form {
   display: flex;
   flex-direction: column;
   width: 80%;
 }
 
-.signup-form > * {
+.demo-button {
+    width: 71%;
+    padding: 2.6% 4%;
+    margin: 3.2% 6%;
+}
+
+.login-form > * {
     padding: 3.5% 4%;
     margin: 3.2% 6%;
 }
 
-.signup-form > input {
+.login-form > input {
     border: 0.5px solid lightgrey;
     border-radius: 4px;
 }
 
-.signup-form > input:focus {
-  outline: none
+.login-form > input:focus {
+  outline: none;
 }
 
-.signup-logo {
+.login-logo {
     width: 70%;
-    height: 17%;
+    height: 20%;
     margin: 0 auto;
     padding: 5% 0;
 }
 
-.login-link-container {
+.signup-link-container {
     margin: auto;
     color: grey;
 }
 
-.login-link {
+.signup-link {
     text-decoration: none;
     color: #21BFA0;
     font-weight: 600;
 }
 
-.login-link:hover {
+.signup-link:hover {
     cursor: pointer;
     color: rgb(25, 160, 135);
 }

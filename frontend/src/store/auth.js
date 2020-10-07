@@ -16,7 +16,7 @@ export const removeUser = () => {
 
 export const login = (email, password) => {
     return async dispatch => {
-        const res = await fetch('/api/session', {
+        const res = await fetch('/api/session/', {
             method: 'post',
             headers: {
                 "Content-Type": "application/json",

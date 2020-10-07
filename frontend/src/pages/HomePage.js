@@ -21,7 +21,7 @@ function HomePage() {
       dispatch(logout());
     };
 
-    if (!isLoggedIn) return <Redirect to="/signup" />;
+    if (!isLoggedIn) return <Redirect to="/login" />;
 
     return (
         <>
