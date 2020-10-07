@@ -33,7 +33,7 @@ export const login = (email, password) => {
 
 export const signup = (username, email, password, monthly_income) => {
     return async dispatch => {
-        const res = await fetch('/api/users', {
+        const res = await fetch('/api/users/', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',

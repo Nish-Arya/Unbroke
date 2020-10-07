@@ -27,8 +27,8 @@ def signup_user():
     hashed_password = set_password(data['password'])
     monthly_income = data['monthly_income']
 
-    if not username or not email or not hashed_password:
-        return jsonify(message="Username, email, and password required"), 400
+    if not username or not email or not hashed_password or not monthly_income:
+        return jsonify(message="Username, email, password and monthly income required"), 400
     
     user = User(
         username=username,
