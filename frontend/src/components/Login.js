@@ -33,7 +33,7 @@ function Login() {
 
     return (
       <div className="login-page">
-        <Bounce className="login-animation"><h1>Ready to save money? Welcome to un-broke!</h1></Bounce>
+        <Bounce className="login-animation"><h2>Ready to save money? Welcome to un-broke!</h2></Bounce>
         <div className="login-form-container">
           <img className="login-logo" src={logo} alt="Unbroke logo" />
           <form className="login-form" onSubmit={handleSubmit}>

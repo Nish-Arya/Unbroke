@@ -1,17 +1,16 @@
 .login-page {
-    display: flex;
+    display: grid;
     background-color: #f0ffff;
     height: 100vh;
     width: 100vw;
-    align-items: center;
-    justify-content: space-between;
+    grid-template-columns: 1.25fr 1fr;
 }
 
 .login-form-container {
     display: flex;
     flex-direction: column;
     background-color: white;
-    margin: auto auto auto 4%;
+    margin: auto auto auto 0;
     height: 60vh;
     width: 29vw;
     border: 1px solid lightgrey;
@@ -70,6 +69,6 @@
 }
 
 .login-animation {
-    margin-left: 5%;
-    width: 50%;
+    margin: auto;
+    width: 68%;
 }
