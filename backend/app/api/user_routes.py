@@ -15,7 +15,7 @@ def load_user():
         user = session['user']
         return {"user": user}, 200
     else:
-        return {"msg": "user not found"}
+        return {"msg": "user not found"}, 300
 
 
 @user_routes.route('/', methods=['POST'])
