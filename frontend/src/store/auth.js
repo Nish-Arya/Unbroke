@@ -50,7 +50,7 @@ export const signup = (username, email, password, monthly_income) => {
 
 export const logout = () => {
     return async dispatch => {
-        const res = await fetch('/api/session', {
+        const res = await fetch('/api/session/', {
             method: 'delete',
         })
         if (res.ok) {
