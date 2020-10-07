@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
+import styled, { keyframes } from "styled-components";
+import {  fadeIn } from "react-animations";
 import logo from "../images/un-broke-logo.png";
 import { login } from "../store/auth";
 import "./Login.css";
+
+const Bounce = styled.div`animation: 5s ${keyframes`${fadeIn}`} infinite`;
 
 function Login() {
 
@@ -29,6 +33,7 @@ function Login() {
 
     return (
       <div className="login-page">
+        <Bounce className="login-animation"><h1>Ready to save money? Welcome to un-broke!</h1></Bounce>
         <div className="login-form-container">
           <img className="login-logo" src={logo} alt="Unbroke logo" />
           <form className="login-form" onSubmit={handleSubmit}>
