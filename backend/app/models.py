@@ -18,7 +18,8 @@ class User(db.Model):
       "id": self.id,
       "username": self.username,
       "email": self.email,
-      "monthly_income": self.monthly_income
+      "monthly_income": self.monthly_income,
+      "expenses": [expense.to_dict() for expense in self.expenses]
     }
 
 class Expense_Category(db.Model):
@@ -46,3 +47,13 @@ class Expense(db.Model):
 
   user = db.relationship("User", back_populates="expenses")
   expense_category = db.relationship("Expense_Category", back_populates="expenses")
+
+  def to_dict(self):
+    return {
+      "id": self.id,
+      "description": self.description,
+      "amount": self.amount,
+      "category_id": self.category_id,
+      "user_id": self.user_id
+    }
+  
