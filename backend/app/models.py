@@ -11,6 +11,8 @@ class User(db.Model):
   hashed_password = db.Column(db.Binary(100), nullable=False)
   monthly_income = db.Column(db.Integer, nullable=False)
 
+  expenses = db.relationship("Expense", back_populates="user")
+
   def to_dict(self):
     return {
       "id": self.id,
@@ -25,9 +27,22 @@ class Expense_Category(db.Model):
   id = db.Column(db.Integer, primary_key = True)
   name = db.Column(db.String(40), nullable = False)
 
+  expenses = db.relationship("Expense", back_populates="expense_category")
+
   def to_dict(self):
     return {
       "id": self.id,
       "name": self.name
     }
 
+class Expense(db.Model):
+  __tablename__ = 'expenses'
+
+  id = db.Column(db.Integer, primary_key = True)
+  description = db.Column(db.String(40), nullable = False)
+  amount = db.Column(db.Integer, nullable = False)
+  category_id = db.Column(db.Integer, db.ForeignKey("expense_categories.id"))
+  user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+
+  user = db.relationship("User", back_populates="expenses")
+  expense_category = db.relationship("Expense_Category", back_populates="expenses")
