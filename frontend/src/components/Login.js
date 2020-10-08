@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import {  fadeIn } from "react-animations";
-import logo from "../images/un-broke-logo.png";
+import logo from "../un-broke-logo.png";
 import { login } from "../store/auth";
 import "./Login.css";
 
@@ -22,7 +22,7 @@ function Login() {
     };
 
     const handleDemoUser = (e) => {
-      dispatch(login("nish@gmail.com", "password"));
+      dispatch(login("soonmi@aa.io", "password"));
     };
 
     const isFormValid = () => {
@@ -33,7 +33,11 @@ function Login() {
 
     return (
       <div className="login-page">
-        <Bounce className="login-animation"><h2>Ready to save money? Welcome to un-broke!</h2></Bounce>
+        <Bounce className="login-animation">
+          <h2>
+            Ready to save money? Welcome to un-broke!
+          </h2>
+        </Bounce>
         <div className="login-form-container">
           <img className="login-logo" src={logo} alt="Unbroke logo" />
           <form className="login-form" onSubmit={handleSubmit}>
