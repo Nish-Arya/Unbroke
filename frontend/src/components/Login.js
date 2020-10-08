@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import {  fadeIn } from "react-animations";
-import logo from "../un-broke-logo.png";
+import logo from "../images/un-broke-logo.jpg";
 import { login } from "../store/auth";
 import "./Login.css";
 

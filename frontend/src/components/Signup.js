@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { signup } from "../store/auth";
-import logo from "../un-broke-logo.png";
+import logo from "../images/un-broke-logo.jpg";
 import "./Signup.css";
 
 function Signup() {
