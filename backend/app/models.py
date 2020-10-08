@@ -18,3 +18,16 @@ class User(db.Model):
       "email": self.email,
       "monthly_income": self.monthly_income
     }
+
+class Expense_Category(db.Model):
+  __tablename__ = 'expense_categories'
+  
+  id = db.Column(db.Integer, primary_key = True)
+  name = db.Column(db.String(40), nullable = False)
+
+  def to_dict(self):
+    return {
+      "id": self.id,
+      "name": self.name
+    }
+
