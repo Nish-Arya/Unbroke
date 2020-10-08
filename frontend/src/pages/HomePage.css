@@ -69,3 +69,13 @@
     color:  rgb(29, 170, 145);
     cursor: pointer;
 }
+
+.navbar-component:hover {
+    color: white;
+    background-color: rgb(29, 170, 145);
+    transition: .4s;
+}
+
+.navbar-component.active:hover {
+    background-color: black;
+}
