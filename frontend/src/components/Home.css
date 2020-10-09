@@ -1,6 +1,7 @@
 .profile {
-    height: 70vh;
+    height: 78.5vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #F0FFFF;
 }
