@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Income from './Income';
 import "./Home.css";
 
 export class Home extends Component {
     render() {
         return (
           <div className="profile">
-            <h1>Home</h1>
+            <Income />
+            <div></div>
+            <div></div>
           </div>
         );
     }

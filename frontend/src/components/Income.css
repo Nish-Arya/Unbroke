@@ -1,0 +1,15 @@
+.income-column {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.income-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.income-row > * {
+    padding: 3%;
+}

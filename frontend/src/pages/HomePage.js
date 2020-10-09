@@ -38,7 +38,7 @@ function HomePage() {
               activeclass="active"
               exact
             >
-              HOME
+              PROFILE
             </NavLink>
             <NavLink
               to="/goals"

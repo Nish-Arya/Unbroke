@@ -1,7 +1,6 @@
 .profile {
     height: 78.5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 4fr;
     background: #F0FFFF;
 }
