@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Income from './Income';
+import ExpenseCategories from './ExpenseCategories';
 import "./Home.css";
 
 export class Home extends Component {
@@ -7,7 +8,7 @@ export class Home extends Component {
         return (
           <div className="profile">
             <Income />
-            <div></div>
+            <ExpenseCategories />
             <div></div>
           </div>
         );

@@ -1,6 +1,6 @@
 .profile {
     height: 78.5vh;
     display: grid;
-    grid-template-columns: 2fr 3fr 4fr;
+    grid-template-columns: 2.2fr 2.2fr 4fr;
     background: #F0FFFF;
 }

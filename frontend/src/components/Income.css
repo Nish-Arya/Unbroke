@@ -16,3 +16,14 @@
 .income-row > * {
     padding: 2.5%;
 }
+
+.income-category-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 70%;
+    background: black;
+    margin-bottom: 2%;
+    height: 10%;
+}

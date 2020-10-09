@@ -36,15 +36,15 @@ function Income() {
           <h2>Hey, {username}.</h2>
         </div>
         <div className="income-row">
-          <h2>Monthly Income</h2>
+          <h2 className="income-category-title">Monthly Income</h2>
           <h2>{monthly_income}</h2>
         </div>
         <div className="income-row">
-          <h2>Monthly Expenses</h2>
+          <h2 className="income-category-title">Monthly Expenses</h2>
           <h2>{monthly_expenses()}</h2>
         </div>
         <div className="income-row">
-          <h2>Monthly Savings</h2>
+          <h2 className="income-category-title">Monthly Savings</h2>
           <h2>{monthly_income - monthly_expenses()}</h2>
         </div>
       </div>
