@@ -1,6 +1,7 @@
 .income-column {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr 1fr 1fr 1fr;
+    margin: 17% 2%;
 }
 
 .income-row {
@@ -8,8 +9,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: #1A77A3;
+    font-size: 87%;
 }
 
 .income-row > * {
-    padding: 3%;
+    padding: 2.5%;
 }

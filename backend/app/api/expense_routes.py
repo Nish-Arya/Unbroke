@@ -10,7 +10,7 @@ def load_expenses(user_id):
         expenses_dict = {}
         for expense in expenses:
             expenses_dict[expense.id] = expense.to_dict()
-        return expenses_dict
+        return {'expenses': expenses_dict}, 200
     elif (request.method=='POST'):
         data = request.get_json()
         expense = Expense(
