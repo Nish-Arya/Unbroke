@@ -22,7 +22,7 @@ function Login() {
     };
 
     const handleDemoUser = (e) => {
-      dispatch(login("soonmi@aa.io", "password"));
+      dispatch(login("nish@aa.io", "password"));
     };
 
     const isFormValid = () => {

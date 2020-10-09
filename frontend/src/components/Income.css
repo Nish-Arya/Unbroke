@@ -1,0 +1,29 @@
+.income-column {
+    display: grid;
+    grid-template-rows: 0.4fr 1fr 1fr 1fr;
+    margin: 17% 2%;
+}
+
+.income-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #1A77A3;
+    font-size: 87%;
+}
+
+.income-row > * {
+    padding: 2.5%;
+}
+
+.income-category-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 70%;
+    background: black;
+    margin-bottom: 2%;
+    height: 10%;
+}

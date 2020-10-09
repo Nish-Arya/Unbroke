@@ -1,13 +1,14 @@
 .navbar-container {
     display: flex;
     width: 100vw;
-    height: 7vh;
+    height: 5vh;
     align-items: center;
     justify-content: center;
+    background: #F0FFFF;
 }
 
 .navbar {
-    width: 70%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -19,11 +20,13 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 15vh;
+    height: 10vh;
 }
 
 .home-logo {
-    height: 80px;
+    height: 85%;
+    width: 15%;
+    margin: 1% 0;
 }
 
 .navbar-component {
@@ -57,12 +60,14 @@
     flex-direction: row;
     justify-content: space-around;
     text-decoration: none;
+    background: #F0FFFF;
+    height: 6vh;
 }
 
 .footer > * > * {
     text-decoration: none;
-    color: #24BE9F;
-    font-weight: 600;
+    color: black;
+    font-weight: 500;
 }
 
 .footer > * > *:hover {
