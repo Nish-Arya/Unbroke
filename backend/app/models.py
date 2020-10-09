@@ -31,10 +31,7 @@ class Expense_Category(db.Model):
   expenses = db.relationship("Expense", back_populates="expense_category")
 
   def to_dict(self):
-    return {
-      "id": self.id,
-      "name": self.name
-    }
+    return self.name
 
 class Expense(db.Model):
   __tablename__ = 'expenses'
@@ -54,6 +51,7 @@ class Expense(db.Model):
       "description": self.description,
       "amount": self.amount,
       "category_id": self.category_id,
-      "user_id": self.user_id
+      "user_id": self.user_id,
+      "expense_category": self.expense_category.to_dict()
     }
   
