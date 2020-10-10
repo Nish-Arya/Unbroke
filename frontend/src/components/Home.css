@@ -7,7 +7,7 @@
 
 .profile {
     display: grid;
-    grid-template-columns: 1.6fr .9fr 3fr;
+    grid-template-columns: 1.6fr 1.2fr 2.3fr;
 }
 
 .profile > * {

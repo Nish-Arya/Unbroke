@@ -15,6 +15,8 @@ function ExpenseForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(createExpense(description, parseInt(amount), parseInt(categoryId), userId));
+        setDescription("");
+        setAmount("");
     };
 
     const isFormValid = () => {

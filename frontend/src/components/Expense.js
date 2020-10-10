@@ -13,9 +13,19 @@ function Expense(props) {
         else if (category === "Miscellaneous") return "rgb(155, 49, 146)";
     }
 
+    const handleDelete = (e) => {
+
+    }
+
     return (
-      <div style={{ background: colorDecider(props.expense.expense_category) }} className="expense-container">
-        {props.expense.description} {props.expense.amount}
+      <div
+        style={{ background: colorDecider(props.expense.expense_category) }}
+        className="expense-container"
+      >
+        <div>
+          {props.expense.description} {props.expense.amount}
+        </div>
+        <div className='delete-expense' onClick={handleDelete}> X </div>
       </div>
     );
 }

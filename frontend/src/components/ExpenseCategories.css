@@ -1,13 +1,19 @@
 .expenses-container {
     display: grid;
     grid-template-rows: 1fr 10fr;
+    height: 90%;
 }
 
 .expenses-column {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    overflow: scroll;
+}
+
+.expenses-column > * {
+    padding: 1%;
+    margin: 3% 0;
 }
 
 .expenses-title {

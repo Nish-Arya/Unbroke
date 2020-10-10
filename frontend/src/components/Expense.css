@@ -1,10 +1,19 @@
 .expense-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     color: white;
-    width: 100%;
+    width: 90%;
     height: 4%;
     font-weight: 600;
     border-radius: 4px;
+}
+
+.delete-expense:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.expense-container > * {
+    padding: 0 4%;
 }
