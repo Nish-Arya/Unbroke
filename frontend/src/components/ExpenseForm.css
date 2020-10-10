@@ -1,0 +1,23 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.expense-form {
+    display: flex;
+    justify-content: space-evenly;
+    height: 80%;
+    width: 50%;
+}
+
+.expense-form > * {
+    width: 25%;
+    padding-left: 1%;
+}
+
+.expense-form > input:focus {
+  outline: none;
+}

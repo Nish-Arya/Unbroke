@@ -7,12 +7,32 @@ export const setExpenses = expenses => {
     }
 }
 
+export const createExpense = (description, amount, category_id, userId) => {
+    return async dispatch => {
+        const res = await fetch(`/api/expenses/${userId}`, {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ description, amount, category_id }),
+        });
+        debugger
+        res.data = await res.json();
+        debugger
+        console.log(res.data);
+         if (res.ok) {
+           dispatch(setExpenses(res.data.expenses));
+         }
+         return res;
+    }
+}
+
 export const getExpenses = (userId) => {
     return async dispatch => {
         const res = await fetch(`/api/expenses/${userId}`)
         res.data = await res.json();
         if (res.ok) {
-            dispatch(setExpenses(res.data.user))
+            dispatch(setExpenses(res.data.expenses))
         }
         return res;
     }

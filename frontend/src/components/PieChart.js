@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from "react-redux";
 import { Pie } from 'react-chartjs-2';
 import './PieChart.css'
@@ -47,7 +47,7 @@ function PieChart() {
               },
             ],
           }}
-          height={250}
+          height={220}
           options={{
             layout: {
               padding: {
@@ -60,9 +60,10 @@ function PieChart() {
             legend: {
               position: "bottom",
               labels: {
-                boxWidth: 60,
+                boxWidth: 50,
                 padding: 25,
                 fontColor: "#1A77A3",
+                fontSize: 15
               },
             },
             title: {

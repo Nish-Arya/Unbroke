@@ -21,4 +21,8 @@ def load_expenses(user_id):
         )
         db.session.add(expense)
         db.session.commit()
-        return expense.to_dict()
+        expenses = db.session.query(Expense).filter(Expense.user_id == user_id)
+        expenses_dict = {}
+        for expense in expenses:
+            expenses_dict[expense.id] = expense.to_dict()
+        return {'expenses': expenses_dict}, 200
