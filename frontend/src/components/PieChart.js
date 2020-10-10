@@ -47,7 +47,7 @@ function PieChart() {
               },
             ],
           }}
-          height={280}
+          height={285}
           options={{
             layout: {
               padding: {
