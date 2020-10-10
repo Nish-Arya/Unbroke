@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
+import { useSelector } from "react-redux";
 import { Pie } from 'react-chartjs-2';
 import './PieChart.css'
 
 function PieChart() {
 
-    const [labels] = useState(['Housing', 'Transportation', 'Utilities', 'Food', 'Clothing', 'Insurance', 'Miscellaneous']);
-    const [datasets] = useState([
-      {
-        data: [750, 30, 80, 150, 80, 80, 40],
-        backgroundColor: [
-          "rgb(255, 99, 132)",
-          "rgb(255, 159, 64)",
-          "rgb(255, 205, 86)",
-          "rgb(75, 192, 192)",
-          "rgb(54, 162, 235)",
-          "rgb(153, 102, 255)",
-          "rgb(155, 49, 146)",
-        ],
-      },
-    ]);
+    const expenses = useSelector((state) => state.expenses);
+    const labels = ['Housing', 'Transportation', 'Utilities', 'Food', 'Clothing', 'Insurance', 'Miscellaneous'];
+
+    const totalCalculator = (category) => {
+      let total = 0;
+      for (let expense in expenses) {
+        if (expenses[expense].expense_category === category) {
+          total += expenses[expense].amount;
+        }
+      }
+      return total;
+    };
 
     return (
       <div className="pie-chart-container">
@@ -26,7 +24,28 @@ function PieChart() {
           className="pie-chart"
           data={{
             labels: labels,
-            datasets: datasets,
+            datasets: [
+              {
+                data: [
+                  totalCalculator("Housing"),
+                  totalCalculator("Transportation"),
+                  totalCalculator("Utilities"),
+                  totalCalculator("Food"),
+                  totalCalculator("Clothing"),
+                  totalCalculator("Insurance"),
+                  totalCalculator("Miscellaneous"),
+                ],
+                backgroundColor: [
+                  "rgb(255, 99, 132)",
+                  "rgb(255, 159, 64)",
+                  "rgb(255, 205, 86)",
+                  "rgb(75, 192, 192)",
+                  "rgb(54, 162, 235)",
+                  "rgb(153, 102, 255)",
+                  "rgb(155, 49, 146)",
+                ],
+              },
+            ],
           }}
           height={250}
           options={{
