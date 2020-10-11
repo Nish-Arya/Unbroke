@@ -1,6 +1,21 @@
-.profile {
+.expenses-page {
     height: 78.5vh;
-    display: grid;
-    grid-template-columns: 2.2fr 2.2fr 4fr;
     background: #F0FFFF;
+    display: grid;
+    grid-template-rows: 1fr 18fr;
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: 1.6fr 1.2fr 2.3fr;
+}
+
+.profile > * {
+    padding: 0 15px;
+}
+
+.expenses-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
