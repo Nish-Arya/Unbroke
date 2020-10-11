@@ -47,7 +47,7 @@ function PieChart() {
               },
             ],
           }}
-          height={285}
+          height={260}
           options={{
             layout: {
               padding: {
@@ -69,7 +69,7 @@ function PieChart() {
             title: {
               display: true,
               text: "Your expenses distribution by Categories",
-              padding: 15,
+              padding: 20,
               fontSize: 17,
               fontColor: "#1A77A3",
             },

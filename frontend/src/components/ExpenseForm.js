@@ -20,7 +20,7 @@ function ExpenseForm() {
     };
 
     const isFormValid = () => {
-      return description && amount;
+      return description && amount && categoryId;
     };
 
     return (
@@ -36,7 +36,7 @@ function ExpenseForm() {
           <input
             type="text"
             name="amount"
-            placeholder="amount"
+            placeholder="Amount"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />

@@ -1,6 +1,6 @@
 .expenses-container {
     display: grid;
-    grid-template-rows: 1fr 10fr;
+    grid-template-rows: 1.2fr 9fr;
     height: 90%;
 }
 
@@ -19,5 +19,6 @@
 .expenses-title {
     margin: auto auto 0 auto;
     color: #1A77A3;
+    padding-bottom: 5%;
     font-size: 110%;
 }
