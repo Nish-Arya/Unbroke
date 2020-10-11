@@ -1,7 +1,12 @@
 import React from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { deleteExpense } from '../store/expenses';
 import './Expense.css'
 
 function Expense(props) {
+
+    const userId = useSelector(state => state.auth.id);
+    const dispatch = useDispatch();
 
     const colorDecider = category => {
         if (category === "Housing") return "rgb(255, 99, 132)";
@@ -14,7 +19,8 @@ function Expense(props) {
     }
 
     const handleDelete = (e) => {
-
+      e.preventDefault();
+      dispatch(deleteExpense(props.expense.id, userId));
     }
 
     return (
