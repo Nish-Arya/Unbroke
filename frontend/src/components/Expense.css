@@ -12,6 +12,7 @@
 .delete-expense:hover {
     cursor: pointer;
     color: black;
+    transition: .3s;
 }
 
 .expense-container > * {
