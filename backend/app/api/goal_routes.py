@@ -3,7 +3,7 @@ from app.models import Goal, db
 
 goal_routes = Blueprint('goals', __name__)
 
-@goal_routes.route('/<user_id>', methods=['GET', 'POST', 'DELETE'])
+@goal_routes.route('/<user_id>', methods=['GET', 'POST', 'PATCH', 'DELETE'])
 def load_goals(user_id):
     if (request.method=='GET'):
         goals = db.session.query(Goal).filter(Goal.user_id == user_id)
@@ -27,3 +27,17 @@ def load_goals(user_id):
         for goal in goals:
             goals_dict[goal.id] = goal.to_dict()
         return {'goals': goals_dict}, 200
+    elif (request.method=='PATCH'):
+        data = request.get_json()
+        id = data['id']
+
+        goal = Goal.query.get(id)
+        goal.is_complete = not goal.is_complete
+        db.session.add(goal)
+        db.session.commit()
+        goals = db.session.query(Goal).filter(Goal.user_id == user_id)
+        goals_dict = {}
+        for goal in goals:
+            goals_dict[goal.id] = goal.to_dict()
+        return {'goals': goals_dict}, 200
+        
