@@ -14,7 +14,7 @@ export class Home extends Component {
             </div>
             <div className="profile">
               <Income />
-              <ExpenseCategories />
+              <ExpenseCategories className="expenses-module" />
               <PieChart />
             </div>
           </div>

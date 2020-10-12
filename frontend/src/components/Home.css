@@ -1,13 +1,12 @@
 .expenses-page {
     height: 78.5vh;
     background: #F0FFFF;
-    display: grid;
-    grid-template-rows: 1fr 18fr;
 }
 
 .profile {
     display: grid;
     grid-template-columns: 1.6fr 1.2fr 2.3fr;
+    height: 74.5vh;
 }
 
 .profile > * {
@@ -15,7 +14,11 @@
 }
 
 .expenses-form-container {
+    height: 4vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+}
+
+.expenses-module {
+    height: 72vh;
 }
