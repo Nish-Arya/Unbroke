@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Goal() {
+function Goal(props) {
     return (
         <div>
-            Goal
+            {props.goal.description}
         </div>
     )
 }

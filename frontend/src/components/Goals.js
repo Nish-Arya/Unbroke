@@ -24,8 +24,8 @@ function Goals() {
   return (
     <div>
       <div className="goals-page">
-        <div>Goal Form</div>
-        <div>
+        <div className="goals-form-container">Goal Form</div>
+        <div className="goals-container">
           {Object.values(goals).map(goal => {
             return <Goal goal={goal} key={goal.id} />
           })}

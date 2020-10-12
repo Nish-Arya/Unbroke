@@ -1,7 +1,13 @@
 .goals-page {
     height: 78.5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
     background: #F0FFFF;
+}
+
+.goals-form-container {
+    height: 4vh;
+}
+
+.goals-container {
+    height: 74.5vh;
 }
