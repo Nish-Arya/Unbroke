@@ -33,3 +33,8 @@
 .goal-buttons-holder > * {
     padding: 0 2%;
 }
+
+.goal-buttons-holder > *:hover {
+    color: black;
+    cursor: pointer;
+}

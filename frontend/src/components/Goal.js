@@ -2,6 +2,7 @@ import React from 'react';
 import './Goal.css';
 
 function Goal(props) {
+
     return (
       <div className="goal-container">
         <div className="goal-buttons-holder">
@@ -14,7 +15,6 @@ function Goal(props) {
             <div>Date: {props.goal.completion_month} {props.goal.completion_year}</div>
             <div>Months Left: </div>
         </div>
-        
       </div>
     );
 }

@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setGoals } from '../store/goals';
 import Goal from './Goal';
+import GoalForm from './GoalForm';
 import './Goals.css'
 
 function Goals() {
@@ -24,7 +25,9 @@ function Goals() {
   return (
     <div>
       <div className="goals-page">
-        <div className="goals-form-container">Goal Form</div>
+        <div className="goals-form-container">
+          <GoalForm />
+        </div>
         <div className="goals-container">
           {Object.values(goals).map(goal => {
             return <Goal goal={goal} key={goal.id} />
