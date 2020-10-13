@@ -30,10 +30,20 @@ def load_goals(user_id):
     elif (request.method=='PATCH'):
         data = request.get_json()
         id = data['id']
-
         goal = Goal.query.get(id)
         goal.is_complete = not goal.is_complete
         db.session.add(goal)
+        db.session.commit()
+        goals = db.session.query(Goal).filter(Goal.user_id == user_id)
+        goals_dict = {}
+        for goal in goals:
+            goals_dict[goal.id] = goal.to_dict()
+        return {'goals': goals_dict}, 200
+    elif (request.method=='DELETE'):
+        data = request.get_json()
+        id = data['id']
+        goal = Goal.query.get(id)
+        db.session.delete(goal)
         db.session.commit()
         goals = db.session.query(Goal).filter(Goal.user_id == user_id)
         goals_dict = {}
