@@ -43,6 +43,7 @@
 
 .navbar-component.active {
     background-color: black;
+    opacity: .8;
     color: white;
     border-radius: 0;
 }

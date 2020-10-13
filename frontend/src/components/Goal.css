@@ -2,12 +2,12 @@
     height: 25vh;
     width: 18vw;
     background-color: #21BFA0;
-    opacity: .5;
+    opacity: .6;
     border-radius: 7px;
     margin: 2%;
     padding: 1.5%;
     display: grid;
-    grid-template-rows: 1fr 8fr;
+    grid-template-rows: 1fr 10fr;
 }
 
 .goal-container > * {
