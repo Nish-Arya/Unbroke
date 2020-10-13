@@ -23,6 +23,14 @@ function Goal(props) {
       else return "#606666";
     };
 
+    const monthsLeft = (year, month) => {
+      let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];;
+      let date = new Date();
+      let myDate = months[date.getMonth()] + ' ' + date.getFullYear();
+      let monthsRemaining = (year - date.getFullYear()) * 12;
+      return monthsRemaining;
+    };
+
     return (
       <div
         className="goal-container"
@@ -38,7 +46,7 @@ function Goal(props) {
           <div>
             Date: {props.goal.completion_month} {props.goal.completion_year}
           </div>
-          <div>Months Left: </div>
+          <div>Months Left: {monthsLeft(props.goal.completion_year, props.goal.completion_month)}</div>
           <div>Saving / Month: </div>
         </div>
       </div>
