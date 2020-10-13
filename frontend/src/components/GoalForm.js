@@ -5,7 +5,7 @@ function GoalForm() {
 
     const [description, setDescription] = useState("");
     const [amount, setAmount] = useState("");
-    const [year, setYear] = useState("");
+    const [year, setYear] = useState(2021);
     const [month, setMonth] = useState(1);
 
     const handleSubmit = (e) => {
@@ -27,14 +27,14 @@ function GoalForm() {
             onChange={(e) => setDescription(e.target.value)}
           />
           <input
-            type="text"
+            type="number"
             name="amount"
             placeholder="Amount"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />
           <input
-            type="text"
+            type="number"
             name="year"
             placeholder="Completion Year"
             value={year}

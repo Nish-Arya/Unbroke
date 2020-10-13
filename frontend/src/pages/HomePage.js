@@ -38,7 +38,7 @@ function HomePage() {
               activeclass="active"
               exact
             >
-              PROFILE
+              EXPENSES
             </NavLink>
             <NavLink
               to="/goals"
