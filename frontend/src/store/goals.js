@@ -52,6 +52,23 @@ export const deleteGoal = (id, userId) => {
   };
 };
 
+export const updateGoal = (id, userId) => {
+  return async (dispatch) => {
+    const res = await fetch(`/api/goals/${userId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id }),
+    });
+    res.data = await res.json();
+    if (res.ok) {
+      dispatch(setGoals(res.data.goals));
+    }
+    return res;
+  };
+};
+
 export default function goalsReducer(state = {}, action) {
   switch (action.type) {
     case SET_GOALS:

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { deleteGoal } from "../store/goals";
+import { deleteGoal, updateGoal } from "../store/goals";
 import './Goal.css';
 
 function Goal(props) {
@@ -13,10 +13,23 @@ function Goal(props) {
       dispatch(deleteGoal(props.goal.id, userId));
     };
 
+    const handleComplete = (e) => {
+      e.preventDefault();
+      dispatch(updateGoal(props.goal.id, userId));
+    };
+
+    const colorDecider = (isComplete) => {
+      if (!isComplete) return "#21BFA0";
+      else return "#606666";
+    };
+
     return (
-      <div className="goal-container">
+      <div
+        className="goal-container"
+        style={{ background: colorDecider(props.goal.is_complete) }}
+      >
         <div className="goal-buttons-holder">
-          <div>✔</div>
+          <div onClick={handleComplete}>✔</div>
           <div onClick={handleDelete}>X</div>
         </div>
         <div className="goal-info-holder">
