@@ -47,7 +47,7 @@ function Goal(props) {
             Date: {props.goal.completion_month} {props.goal.completion_year}
           </div>
           <div>Months Left: {monthsLeft(props.goal.completion_year, props.goal.completion_month)}</div>
-          <div>Saving / Month: </div>
+          <div>Saving / Month: {(props.goal.amount / monthsLeft(props.goal.completion_year, props.goal.completion_month)).toFixed(2)}</div>
         </div>
       </div>
     );
