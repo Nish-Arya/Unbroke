@@ -2,7 +2,7 @@
     height: 25vh;
     width: 18vw;
     background-color: #21BFA0;
-    opacity: .6;
+    opacity: .8;
     border-radius: 7px;
     margin: 2%;
     padding: 1.5%;
@@ -28,6 +28,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    color: white;
 }
 
 .goal-buttons-holder > * {

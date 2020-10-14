@@ -9,7 +9,7 @@ function GoalForm() {
 
     const [description, setDescription] = useState("");
     const [amount, setAmount] = useState("");
-    const [year, setYear] = useState(2021);
+    const [year, setYear] = useState("");
     const [month, setMonth] = useState("January");
     const dispatch = useDispatch();
 

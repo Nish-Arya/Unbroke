@@ -26,8 +26,8 @@ function Goal(props) {
     const monthsLeft = (year, month) => {
       let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];;
       let date = new Date();
-      let myDate = months[date.getMonth()] + ' ' + date.getFullYear();
-      let monthsRemaining = (year - date.getFullYear()) * 12;
+      let monthsRemaining = (year - date.getFullYear()) * 12 + (12 - date.getMonth());
+      monthsRemaining -= (12 - months.indexOf(month) + 1)
       return monthsRemaining;
     };
 
@@ -41,13 +41,13 @@ function Goal(props) {
           <div onClick={handleDelete}>X</div>
         </div>
         <div className="goal-info-holder">
-          <div>Description: {props.goal.description}</div>
-          <div>Amount: {props.goal.amount}</div>
+          <div>Description - {props.goal.description}</div>
+          <div>Amount - {props.goal.amount}</div>
           <div>
-            Date: {props.goal.completion_month} {props.goal.completion_year}
+            Date - {props.goal.completion_month} {props.goal.completion_year}
           </div>
-          <div>Months Left: {monthsLeft(props.goal.completion_year, props.goal.completion_month)}</div>
-          <div>Saving / Month: {(props.goal.amount / monthsLeft(props.goal.completion_year, props.goal.completion_month)).toFixed(2)}</div>
+          <div>Months Left - {monthsLeft(props.goal.completion_year, props.goal.completion_month)}</div>
+          <div>Saving Per Month - {(props.goal.amount / monthsLeft(props.goal.completion_year, props.goal.completion_month)).toFixed(2)}</div>
         </div>
       </div>
     );
