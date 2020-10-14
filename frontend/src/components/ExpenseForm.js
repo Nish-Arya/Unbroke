@@ -34,7 +34,7 @@ function ExpenseForm() {
             onChange={(e) => setDescription(e.target.value)}
           />
           <input
-            type="text"
+            type="number"
             name="amount"
             placeholder="Amount"
             value={amount}

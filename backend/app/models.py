@@ -12,6 +12,7 @@ class User(db.Model):
   monthly_income = db.Column(db.Integer, nullable=False)
 
   expenses = db.relationship("Expense", back_populates="user")
+  goals = db.relationship("Goal", back_populates="user")
 
   def to_dict(self):
     return {
@@ -55,3 +56,26 @@ class Expense(db.Model):
       "expense_category": self.expense_category.to_dict()
     }
   
+class Goal(db.Model):
+  __tablename__ = 'goals'
+
+  id = db.Column(db.Integer, primary_key = True)
+  description = db.Column(db.String(60), nullable = False)
+  amount = db.Column(db.Integer, nullable = False)
+  completion_year = db.Column(db.Integer, nullable = False)
+  completion_month = db.Column(db.String(10), nullable = False)
+  user_id = user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+  is_complete = db.Column(db.Boolean, default = False)
+
+  user = db.relationship("User", back_populates="goals")
+
+  def to_dict(self):
+    return {
+      "id": self.id,
+      "description": self.description,
+      "amount": self.amount,
+      "completion_year": self.completion_year,
+      "completion_month": self.completion_month,
+      "user_id": self.user_id,
+      "is_complete": self.is_complete
+    }
