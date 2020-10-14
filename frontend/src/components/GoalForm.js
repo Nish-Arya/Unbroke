@@ -9,8 +9,23 @@ function GoalForm() {
 
     const [description, setDescription] = useState("");
     const [amount, setAmount] = useState("");
-    const [year, setYear] = useState("");
-    const [month, setMonth] = useState("January");
+    let date = new Date();
+    let months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    const [year, setYear] = useState(date.getFullYear());
+    const [month, setMonth] = useState(months[date.getMonth()]);
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
@@ -18,7 +33,8 @@ function GoalForm() {
         dispatch(createGoal(description, parseInt(amount), parseInt(year), month, userId));
         setDescription("");
         setAmount("");
-        setYear(2021);
+        setYear(date.getFullYear());
+        setMonth(months[date.getMonth()]);
     };
 
     const isFormValid = () => {

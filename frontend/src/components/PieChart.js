@@ -69,7 +69,7 @@ function PieChart() {
             title: {
               display: true,
               text: "Your expenses distribution by Categories",
-              padding: 20,
+              padding: 5,
               fontSize: 17,
               fontColor: "#1A77A3",
             },

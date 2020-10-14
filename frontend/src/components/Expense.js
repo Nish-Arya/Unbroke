@@ -29,7 +29,7 @@ function Expense(props) {
         className="expense-container"
       >
         <div>
-          {props.expense.description} - {props.expense.amount}
+          {props.expense.description} - ${props.expense.amount}
         </div>
         <div className='delete-expense' onClick={handleDelete}> X </div>
       </div>

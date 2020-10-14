@@ -42,12 +42,12 @@ function Goal(props) {
         </div>
         <div className="goal-info-holder">
           <div>Description - {props.goal.description}</div>
-          <div>Amount - {props.goal.amount}</div>
+          <div>Amount - ${props.goal.amount}</div>
           <div>
             Date - {props.goal.completion_month} {props.goal.completion_year}
           </div>
           <div>Months Left - {monthsLeft(props.goal.completion_year, props.goal.completion_month)}</div>
-          <div>Saving Per Month - {(props.goal.amount / monthsLeft(props.goal.completion_year, props.goal.completion_month)).toFixed(2)}</div>
+          <div>Savings Per Month - ${(props.goal.amount / monthsLeft(props.goal.completion_year, props.goal.completion_month)).toFixed(2)}</div>
         </div>
       </div>
     );
