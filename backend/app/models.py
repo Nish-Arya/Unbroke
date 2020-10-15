@@ -89,8 +89,6 @@ class Holding(db.Model):
   num_of_shares = db.Column(db.Integer, nullable = False)
   user_id = user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
-  user = db.relationship("User", back_populates="goals")
-
   def to_dict(self):
     return {
       "id": self.id,

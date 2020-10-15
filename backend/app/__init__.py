@@ -9,6 +9,7 @@ from .api.user_routes import user_routes
 from .api.session_routes import session_routes
 from .api.expense_routes import expense_routes
 from .api.goal_routes import goal_routes
+from .api.holding_routes import holding_routes
 
 from .config import Config
 
@@ -18,6 +19,7 @@ app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(session_routes, url_prefix='/api/session')
 app.register_blueprint(expense_routes, url_prefix='/api/expenses')
 app.register_blueprint(goal_routes, url_prefix='/api/goals')
+app.register_blueprint(holding_routes, url_prefix='/api/holdings')
 db.init_app(app)
 Migrate(app, db)
 
