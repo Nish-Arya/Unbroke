@@ -1,7 +1,9 @@
 .holdings {
     height: 78.5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
     background: #F0FFFF;
+}
+
+.holdings-container {
+    height: 74.5vh;
 }

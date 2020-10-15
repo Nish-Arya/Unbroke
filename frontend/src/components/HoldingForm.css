@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4vh;
+}
+
+.holding-form {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 80%;
+}
+
+.holding-form > * {
+    height: 80%;
+    width: 25%;
+    padding-left: 1%;
+}
+
+.holding-form-component {
+    height: 100%;
+}
+
+.holding-form > *:focus {
+  outline: none;
+}
