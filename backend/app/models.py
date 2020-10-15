@@ -1,4 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
+import os
+import requests
 
 db = SQLAlchemy()
 
@@ -90,10 +92,15 @@ class Holding(db.Model):
   user_id = user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
   def to_dict(self):
+
+    api_key = os.environ.get("FINHUB_API_KEY")
+    res = requests.get(f'https://finnhub.io/api/v1/quote?symbol={self.ticker.upper()}&token={api_key}').json()
+
     return {
       "id": self.id,
       "ticker": self.ticker,
       "buy_price": self.buy_price,
       "num_of_shares": self.num_of_shares,
-      "user_id": self.user_id
+      "user_id": self.user_id,
+      "quote": res
     }

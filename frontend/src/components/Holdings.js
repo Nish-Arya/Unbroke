@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import {  NavLink } from "react-router-dom";
+import {  NavLink, Route, Switch } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setHoldings } from "../store/holdings";
 import HoldingForm from "./HoldingForm";
 import "./Holdings.css";
 import Holding from "./Holding";
+import Graph from "./Graph";
 
 function Holdings() {
 
@@ -43,7 +44,15 @@ function Holdings() {
               );
             })}
           </div>
-          <div className="holding-graph-container"></div>
+          <div className="holding-graph-container">
+            <Switch>
+              {Object.values(holdings).map((holding) => {
+                return <Route path="/holding/:id">
+                  <Graph holding={holding}/>
+                </Route>;
+              })}
+            </Switch>
+          </div>
         </div>
       </div>
     );
