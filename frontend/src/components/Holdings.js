@@ -9,7 +9,11 @@ export class Holdings extends Component {
             <div className="holdings-form-container">
               <HoldingForm />
             </div>
-            <div className="holdings-container"></div>
+            <div className="holdings-container">
+              <div className="holding-navlinks-container">
+                
+              </div>
+            </div>
           </div>
         );
     }
