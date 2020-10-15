@@ -15,6 +15,7 @@ function ExpenseCategories() {
             return <Expense expense={expense} key={expense.id} />
           })}
         </div>
+        <div />
       </div>
     );
 }

@@ -23,5 +23,5 @@
 }
 
 .holding-form > *:focus {
-  outline: none;
+    outline: none;
 }

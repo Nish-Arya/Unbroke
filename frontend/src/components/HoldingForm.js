@@ -9,6 +9,9 @@ function HoldingForm() {
 
     const handleSubmit = (e) => {
       e.preventDefault();
+      setTicker('');
+      setBuyPrice('');
+      setNumOfShares('');
     };
 
     const isFormValid = () => {
