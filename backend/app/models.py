@@ -79,3 +79,23 @@ class Goal(db.Model):
       "user_id": self.user_id,
       "is_complete": self.is_complete
     }
+
+class Holding(db.Model):
+  __tablename__ = 'holdings'
+
+  id = db.Column(db.Integer, primary_key = True)
+  ticker = db.Column(db.String(60), nullable = False)
+  buy_price = db.Column(db.Integer, nullable = False)
+  num_of_shares = db.Column(db.Integer, nullable = False)
+  user_id = user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+
+  user = db.relationship("User", back_populates="goals")
+
+  def to_dict(self):
+    return {
+      "id": self.id,
+      "ticker": self.ticker,
+      "buy_price": self.buy_price,
+      "num_of_shares": self.num_of_shares,
+      "user_id": self.user_id
+    }
