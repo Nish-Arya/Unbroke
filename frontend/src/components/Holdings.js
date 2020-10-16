@@ -29,7 +29,7 @@ function Holdings() {
         <div className="holdings-form-container">
           <HoldingForm />
         </div>
-        <div className="holdings-container">
+        <div className="holdings-titles-container">
           <div className="holding-navlinks-container">
             <div className="holding-title-container">
               <div>Ticker</div>
@@ -39,25 +39,31 @@ function Holdings() {
               <div>Quantity</div>
               <div>Position($)</div>
             </div>
-            {Object.values(holdings).map((holding) => {
-              return (
-                <NavLink
-                  key={holding.id}
-                  to={`/holding/${holding.id}`}
-                  className="holding-navlink"
-                  activeClassName="active-holding"
-                >
-                  <Holding holding={holding} key={holding.id} />
-                </NavLink>
-              );
-            })}
+            <div className='holdings-container'>
+              {Object.values(holdings).map((holding) => {
+                return (
+                  <NavLink
+                    key={holding.id}
+                    to={`/stock-holdings/holding/${holding.id}`}
+                    className="holding-navlink"
+                    activeClassName="active-holding"
+                  >
+                    <Holding holding={holding} key={holding.id} />
+                  </NavLink>
+                );
+              })}
+            </div>
           </div>
           <div className="holding-graph-container">
             <Switch>
               {Object.values(holdings).map((holding) => {
                 return (
-                  <Route path="/holding/:id">
-                    <Graph holding={holding} />
+                  <Route
+                    key={holding.id}
+                    exact
+                    path={`/stock-holdings/holding/${holding.id}`}
+                  >
+                    <Graph key={holding.id} holding={holding} />
                   </Route>
                 );
               })}

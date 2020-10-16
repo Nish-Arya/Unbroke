@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Holding() {
+function Holding(props) {
     return (
-        <div>
-            Link
+        <div className='holding-container'>
+            {props.holding.ticker}
         </div>
     )
 }

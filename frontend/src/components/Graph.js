@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-function Graph() {
+function Graph(props) {
     return (
         <div>
-            
+            {props.holding.ticker}
         </div>
     )
 }
 
-export default Graph
+export default Graph;

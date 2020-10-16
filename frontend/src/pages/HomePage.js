@@ -71,7 +71,7 @@ function HomePage() {
           <Route path="/stock-holdings">
             <Holdings />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>
@@ -84,7 +84,9 @@ function HomePage() {
               <a href="https://github.com/Nish-Arya">GITHUB</a>
             </div>
             <div>
-              <a href="https://www.linkedin.com/in/nish-arya-53727a16a/">LINKEDIN</a>
+              <a href="https://www.linkedin.com/in/nish-arya-53727a16a/">
+                LINKEDIN
+              </a>
             </div>
             <h5>© 2020 UNBROKE BUDGETING SOLUTIONS</h5>
           </div>
