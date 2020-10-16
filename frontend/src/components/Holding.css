@@ -1,0 +1,17 @@
+.holding-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 5vh;
+    text-decoration: none;
+    padding-left: 5%;
+    border-radius: 5px;
+    background-color: #d1d1d1;
+    margin-bottom: 2%;
+}
+
+.holding-container > * {
+    width: 20%;
+    color: #6A727A;
+}

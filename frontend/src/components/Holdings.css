@@ -7,7 +7,7 @@
 .holdings-titles-container {
     height: 74.5vh;
     display: grid;
-    grid-template-columns: 2.5fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
 }
 
 .holdings-titles-container > * {
@@ -32,5 +32,22 @@
     justify-content: space-evenly;
     color: #1A77A3;
     font-weight: 600;
-    font-size: 120%;
+    font-size: 100%;
+    padding-left: 5%;
+}
+
+.holding-title-container > * {
+    width: 20%;
+    margin-right: 5%;
+}
+
+.holding-navlink.active-holding > * {
+    background-color: black;
+    opacity: .65;
+    font-weight: 600;
+}
+
+.holding-navlink.active-holding > * > * {
+    color: white;
+    text-decoration: none;
 }

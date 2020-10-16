@@ -33,7 +33,7 @@ function Holdings() {
           <div className="holding-navlinks-container">
             <div className="holding-title-container">
               <div>Ticker</div>
-              <div>Current-Price</div>
+              <div>Price</div>
               <div>Return(%)</div>
               <div>Buy-Price</div>
               <div>Quantity</div>
