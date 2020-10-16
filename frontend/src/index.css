@@ -1,6 +1,7 @@
 /* TODO Add site wide styles */
 * {
     margin: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 button {
