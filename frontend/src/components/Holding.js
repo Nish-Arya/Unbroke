@@ -9,7 +9,7 @@ function Holding(props) {
         <div>{(((props.holding.quote.c/props.holding.buy_price)-1)*100).toFixed(2)}%</div>
         <div>${props.holding.buy_price.toFixed(2)}</div>
         <div>{props.holding.num_of_shares.toFixed(2)}</div>
-        <div>${(props.holding.buy_price*props.holding.num_of_shares).toFixed(2)}</div>
+        <div>${(props.holding.quote.c*props.holding.num_of_shares).toFixed(2)}</div>
       </div>
     );
 }
