@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import { createHolding } from "../store/holdings";
 import './HoldingForm.css'
 
 function HoldingForm() {
 
+    const userId = useSelector((state) => state.auth.id);
+
     const [ticker, setTicker] = useState('');
     const [buyPrice, setBuyPrice] = useState('');
     const [numOfShares, setNumOfShares] = useState('');
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
       e.preventDefault();
+      dispatch(createHolding(ticker, buyPrice, numOfShares, userId));
       setTicker('');
       setBuyPrice('');
       setNumOfShares('');

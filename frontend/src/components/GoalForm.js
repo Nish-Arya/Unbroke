@@ -5,7 +5,7 @@ import './GoalForm.css';
 
 function GoalForm() {
 
-  const userId = useSelector((state) => state.auth.id);
+    const userId = useSelector((state) => state.auth.id);
 
     const [description, setDescription] = useState("");
     const [amount, setAmount] = useState("");
