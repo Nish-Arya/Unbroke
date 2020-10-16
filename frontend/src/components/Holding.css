@@ -14,4 +14,5 @@
 .holding-container > * {
     width: 20%;
     color: #6A727A;
+    font-weight: 600;
 }

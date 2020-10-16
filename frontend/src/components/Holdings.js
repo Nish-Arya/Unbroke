@@ -53,6 +53,7 @@ function Holdings() {
                 );
               })}
             </div>
+            <div />
           </div>
           <div className="holding-graph-container">
             <Switch>
