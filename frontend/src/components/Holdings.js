@@ -31,6 +31,14 @@ function Holdings() {
         </div>
         <div className="holdings-container">
           <div className="holding-navlinks-container">
+            <div className="holding-title-container">
+              <div>Ticker</div>
+              <div>Current-Price</div>
+              <div>Return(%)</div>
+              <div>Buy-Price</div>
+              <div>Quantity</div>
+              <div>Position($)</div>
+            </div>
             {Object.values(holdings).map((holding) => {
               return (
                 <NavLink
@@ -47,9 +55,11 @@ function Holdings() {
           <div className="holding-graph-container">
             <Switch>
               {Object.values(holdings).map((holding) => {
-                return <Route path="/holding/:id">
-                  <Graph holding={holding}/>
-                </Route>;
+                return (
+                  <Route path="/holding/:id">
+                    <Graph holding={holding} />
+                  </Route>
+                );
               })}
             </Switch>
           </div>

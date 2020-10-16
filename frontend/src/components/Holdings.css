@@ -19,3 +19,18 @@
     box-shadow: 3px 3px 3px rgb(220, 220, 220);
     background: white;
 }
+
+.holding-navlinks-container {
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+}
+
+.holding-title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #1A77A3;
+    font-weight: 600;
+    font-size: 120%;
+}
