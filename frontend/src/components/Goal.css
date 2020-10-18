@@ -41,3 +41,8 @@
     cursor: pointer;
     transition: .3s;
 }
+
+.goal-description-holder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
