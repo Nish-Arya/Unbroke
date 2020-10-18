@@ -1,18 +1,17 @@
 .holding-container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr .8fr 1.2fr .5fr;
     align-items: center;
-    justify-content: space-evenly;
     height: 5vh;
     text-decoration: none;
-    padding-left: 5%;
     border-radius: 5px;
     background-color: #d1d1d1;
     margin-bottom: 2%;
 }
 
 .holding-container > * {
-    width: 20%;
+    display: flex;
     color: #6A727A;
     font-weight: 600;
+    justify-content: center;
 }

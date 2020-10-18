@@ -32,14 +32,17 @@ function Holdings() {
         <div className="holdings-titles-container">
           <div className="holding-navlinks-container">
             <div className="holding-title-container">
-              <div>Ticker</div>
+              <div>
+                <div>Ticker</div>
+              </div>
               <div>Price</div>
               <div>Return(%)</div>
               <div>Buy-Price</div>
               <div>Quantity</div>
               <div>Position($)</div>
+              <div />
             </div>
-            <div className='holdings-container'>
+            <div className="holdings-container">
               {Object.values(holdings).map((holding) => {
                 return (
                   <NavLink

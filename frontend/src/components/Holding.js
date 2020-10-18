@@ -10,6 +10,7 @@ function Holding(props) {
         <div>${props.holding.buy_price.toFixed(2)}</div>
         <div>{props.holding.num_of_shares.toFixed(2)}</div>
         <div>${(props.holding.quote.c*props.holding.num_of_shares).toFixed(2)}</div>
+        <div>x</div>
       </div>
     );
 }

@@ -26,19 +26,20 @@
 }
 
 .holding-title-container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr .8fr 1.2fr .5fr;
     align-items: center;
-    justify-content: space-evenly;
     color: #1A77A3;
     font-weight: 600;
     font-size: 100%;
-    padding-left: 5%;
 }
 
 .holding-title-container > * {
+    display: flex;
     width: 20%;
-    margin-right: 5%;
+    justify-self: center;
+    width: 100%;
+    padding-left: 30%;
 }
 
 .holding-navlink.active-holding > * {
