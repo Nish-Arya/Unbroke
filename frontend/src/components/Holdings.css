@@ -56,3 +56,10 @@
 .holdings-container {
     overflow: scroll;
 }
+
+.default-graph-route {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
