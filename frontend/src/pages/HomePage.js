@@ -41,18 +41,18 @@ function HomePage() {
               EXPENSES
             </NavLink>
             <NavLink
-              to="/goals"
-              className="navbar-component"
-              activeclass="active"
-            >
-              GOALS
-            </NavLink>
-            <NavLink
               to="/stock-holdings"
               className="navbar-component"
               activeclass="active"
             >
               STOCK HOLDINGS
+            </NavLink>
+            <NavLink
+              to="/goals"
+              className="navbar-component"
+              activeclass="active"
+            >
+              GOALS
             </NavLink>
             <button
               id="navbar-button"
