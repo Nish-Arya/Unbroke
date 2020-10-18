@@ -1,4 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
+import os
+import requests
 
 db = SQLAlchemy()
 
@@ -39,7 +41,7 @@ class Expense(db.Model):
 
   id = db.Column(db.Integer, primary_key = True)
   description = db.Column(db.String(40), nullable = False)
-  amount = db.Column(db.Integer, nullable = False)
+  amount = db.Column(db.Float, nullable = False)
   category_id = db.Column(db.Integer, db.ForeignKey("expense_categories.id"))
   user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
@@ -61,7 +63,7 @@ class Goal(db.Model):
 
   id = db.Column(db.Integer, primary_key = True)
   description = db.Column(db.String(60), nullable = False)
-  amount = db.Column(db.Integer, nullable = False)
+  amount = db.Column(db.Float, nullable = False)
   completion_year = db.Column(db.Integer, nullable = False)
   completion_month = db.Column(db.String(10), nullable = False)
   user_id = user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
@@ -78,4 +80,27 @@ class Goal(db.Model):
       "completion_month": self.completion_month,
       "user_id": self.user_id,
       "is_complete": self.is_complete
+    }
+
+class Holding(db.Model):
+  __tablename__ = 'holdings'
+
+  id = db.Column(db.Integer, primary_key = True)
+  ticker = db.Column(db.String(60), nullable = False)
+  buy_price = db.Column(db.Float, nullable = False)
+  num_of_shares = db.Column(db.Float, nullable = False)
+  user_id = user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+
+  def to_dict(self):
+
+    api_key = os.environ.get("FINHUB_API_KEY")
+    res = requests.get(f'https://finnhub.io/api/v1/quote?symbol={self.ticker.upper()}&token={api_key}').json()
+
+    return {
+      "id": self.id,
+      "ticker": self.ticker,
+      "buy_price": self.buy_price,
+      "num_of_shares": self.num_of_shares,
+      "user_id": self.user_id,
+      "quote": res
     }

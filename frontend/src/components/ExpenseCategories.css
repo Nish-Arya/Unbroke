@@ -1,6 +1,6 @@
 .expenses-container {
     display: grid;
-    grid-template-rows: 1.2fr 9fr;
+    grid-template-rows: 1fr 9fr .25fr;
     height: 70vh;
 }
 

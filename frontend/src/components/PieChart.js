@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from "react-redux";
-import { Pie } from 'react-chartjs-2';
+import { Pie, Chart } from 'react-chartjs-2';
 import './PieChart.css'
 
 function PieChart() {
@@ -17,6 +17,9 @@ function PieChart() {
       }
       return total;
     };
+
+    Chart.defaults.global.defaultFontFamily =
+      "'Courier New', Courier, monospace";
 
     return (
       <div className="pie-chart-container">
@@ -47,7 +50,7 @@ function PieChart() {
               },
             ],
           }}
-          height={260}
+          height={280}
           options={{
             layout: {
               padding: {
@@ -63,13 +66,13 @@ function PieChart() {
                 boxWidth: 50,
                 padding: 25,
                 fontColor: "#1A77A3",
-                fontSize: 15
+                fontSize: 15,
               },
             },
             title: {
               display: true,
               text: "Your expenses distribution by Categories",
-              padding: 5,
+              padding: 15,
               fontSize: 17,
               fontColor: "#1A77A3",
             },

@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 import auth from './auth';
 import expenses from "./expenses";
 import goals from "./goals";
+import holdings from "./holdings";
 
 const rootReducer = combineReducers({
     auth,
     expenses,
-    goals
+    goals,
+    holdings
 });
 
 let storeEnhancer;
