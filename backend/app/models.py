@@ -41,7 +41,7 @@ class Expense(db.Model):
 
   id = db.Column(db.Integer, primary_key = True)
   description = db.Column(db.String(40), nullable = False)
-  amount = db.Column(db.Integer, nullable = False)
+  amount = db.Column(db.Float, nullable = False)
   category_id = db.Column(db.Integer, db.ForeignKey("expense_categories.id"))
   user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
@@ -63,7 +63,7 @@ class Goal(db.Model):
 
   id = db.Column(db.Integer, primary_key = True)
   description = db.Column(db.String(60), nullable = False)
-  amount = db.Column(db.Integer, nullable = False)
+  amount = db.Column(db.Float, nullable = False)
   completion_year = db.Column(db.Integer, nullable = False)
   completion_month = db.Column(db.String(10), nullable = False)
   user_id = user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
@@ -87,8 +87,8 @@ class Holding(db.Model):
 
   id = db.Column(db.Integer, primary_key = True)
   ticker = db.Column(db.String(60), nullable = False)
-  buy_price = db.Column(db.Integer, nullable = False)
-  num_of_shares = db.Column(db.Integer, nullable = False)
+  buy_price = db.Column(db.Float, nullable = False)
+  num_of_shares = db.Column(db.Float, nullable = False)
   user_id = user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
   def to_dict(self):
