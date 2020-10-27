@@ -22,7 +22,7 @@ function Graph(props) {
     }, [props.holding.ticker]);
 
     const data = {
-      labels: ["6wks", "5wks", "4wks", "3wks", "2wks", "1wk"],
+      labels: ["5wks", "4wks", "3wks", "2wks", "1wk", "0wks"],
       datasets: [
         {
           label: "Price History",
