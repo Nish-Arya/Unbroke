@@ -59,7 +59,8 @@
 
 .default-graph-route {
     display: flex;
-    height: 100%;
+    height: 70vh;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
