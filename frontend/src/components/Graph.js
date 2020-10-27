@@ -5,6 +5,7 @@ import "./Graph.css";
 function Graph(props) {
 
     const [graphData, setGraphData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
       const loadGraph = async () => {
@@ -15,6 +16,7 @@ function Graph(props) {
         if (res.ok) {
           setGraphData(res.data.res.c);
         }
+        setLoading(false);
       };
       loadGraph();
     }, [props.holding.ticker]);
@@ -31,12 +33,14 @@ function Graph(props) {
         },
       ],
     };
+
+    if (loading) return null;
     
     return (
       <div>
         <div className="graph-holder">
           <h1>{props.holding.ticker.toUpperCase()} PRICE CHART</h1>
-          <Line data={data} />
+          <Line data={data} height={250}/>
         </div>
       </div>
     );
