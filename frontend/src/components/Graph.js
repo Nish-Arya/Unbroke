@@ -1,31 +1,26 @@
 import React from 'react';
 import { Line } from "react-chartjs-2";
+import "./Graph.css";
 
 function Graph(props) {
 
     const data = {
-      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+      labels: ["6wks", "5wks", "4wks", "3wks", "2wks", "1wk"],
       datasets: [
         {
-          label: "First dataset",
+          label: "Price History",
           data: [33, 53, 85, 41, 44, 65],
-          fill: true,
+          fill: false,
           backgroundColor: "rgba(75,192,192,0.2)",
           borderColor: "rgba(75,192,192,1)",
-        },
-        {
-          label: "Second dataset",
-          data: [33, 25, 35, 51, 54, 76],
-          fill: false,
-          borderColor: "#742774",
         },
       ],
     };
     
     return (
       <div>
-        {props.holding.ticker}
         <div className="graph-holder">
+          <h1>{props.holding.ticker.toUpperCase()} PRICE CHART</h1>
           <Line data={data} />
         </div>
       </div>
