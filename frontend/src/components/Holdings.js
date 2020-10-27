@@ -66,9 +66,7 @@ function Holdings() {
           <div className="holding-graph-container">
             <Switch>
               <Route exact path="/stock-holdings">
-                <div className="default-graph-route">
-                  <Graph holding={firstHolding} />
-                </div>
+                <Graph holding={firstHolding} />
               </Route>
               {Object.values(holdings).map((holding) => {
                 return (
