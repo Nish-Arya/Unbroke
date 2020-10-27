@@ -45,5 +45,5 @@ def load_holdings(user_id):
 def load_graph(ticker):
     api_key = os.environ.get("FINHUB_API_KEY")
     timestamp = int(time.time())
-    res = requests.get(f'https://finnhub.io/api/v1/stock/candle?symbol={ticker}&resolution=D&from={timestamp-2592000}&to={timestamp}&token={api_key}').json()
+    res = requests.get(f'https://finnhub.io/api/v1/stock/candle?symbol={ticker}&resolution=W&from={timestamp-3628800}&to={timestamp}&token={api_key}').json()
     return {"res": res}, 200
