@@ -12,6 +12,9 @@ import Holdings from "../components/Holdings";
 import { logout } from "../store/auth";
 import logo from "../images/un-broke-logo.jpg";
 import "./HomePage.css"
+import InfoIcon from "@material-ui/icons/Info";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
 function HomePage() {
 
@@ -78,17 +81,21 @@ function HomePage() {
         <div className="footer-container">
           <div className="footer">
             <div>
-              <a href="https://github.com/Nish-Arya/Unbroke/wiki">ABOUT</a>
+              <a href="https://github.com/Nish-Arya/Unbroke/wiki">
+                <InfoIcon fontSize="large" opacity={0.5} />
+              </a>
             </div>
             <div>
-              <a href="https://github.com/Nish-Arya">GITHUB</a>
+              <a href="https://github.com/Nish-Arya">
+                <GitHubIcon fontSize="large" opacity={0.5} />
+              </a>
             </div>
             <div>
               <a href="https://www.linkedin.com/in/nish-arya-53727a16a/">
-                LINKEDIN
+                <LinkedInIcon fontSize="large" opacity={0.5} />
               </a>
             </div>
-            <h5>© 2020 UNBROKE BUDGETING SOLUTIONS</h5>
+            <h5 style={{opacity: 0.5}}>© 2020 UNBROKE BUDGETING SOLUTIONS</h5>
           </div>
         </div>
       </div>
