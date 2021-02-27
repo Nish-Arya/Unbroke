@@ -60,6 +60,7 @@ function PieChart() {
                 bottom: 0,
               },
             },
+            maintainAspectRatio: false,
             legend: {
               position: "bottom",
               labels: {
