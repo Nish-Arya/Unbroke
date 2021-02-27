@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { deleteGoal, updateGoal } from "../store/goals";
 import './Goal.css';
+import CheckCircleRoundedIcon from "@material-ui/icons/CheckCircleRounded";
+import DeleteForeverRoundedIcon from "@material-ui/icons/DeleteForeverRounded";
 
 function Goal(props) {
 
@@ -37,8 +39,12 @@ function Goal(props) {
         style={{ background: colorDecider(props.goal.is_complete) }}
       >
         <div className="goal-buttons-holder">
-          <div onClick={handleComplete}>✔</div>
-          <div onClick={handleDelete}>X</div>
+          <div onClick={handleComplete}>
+            <CheckCircleRoundedIcon />
+          </div>
+          <div onClick={handleDelete}>
+            <DeleteForeverRoundedIcon />
+          </div>
         </div>
         <div className="goal-info-holder">
           <div>Description - {props.goal.description}</div>

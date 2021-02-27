@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { deleteHolding } from "../store/holdings";
 import './Holding.css'
+import DeleteForeverRoundedIcon from "@material-ui/icons/DeleteForeverRounded";
 
 function Holding(props) {
 
@@ -21,7 +22,9 @@ function Holding(props) {
         <div>${props.holding.buy_price.toFixed(2)}</div>
         <div>{props.holding.num_of_shares.toFixed(2)}</div>
         <div>${(props.holding.quote.c*props.holding.num_of_shares).toFixed(2)}</div>
-        <div id='holding-delete' onClick={handleDelete}>X</div>
+        <div id='holding-delete' onClick={handleDelete}>
+          <DeleteForeverRoundedIcon />
+        </div>
       </div>
     );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { deleteExpense } from '../store/expenses';
 import './Expense.css'
+import DeleteForeverRoundedIcon from "@material-ui/icons/DeleteForeverRounded";
 
 function Expense(props) {
 
@@ -31,7 +32,9 @@ function Expense(props) {
         <div>
           {props.expense.description} - ${props.expense.amount}
         </div>
-        <div className='delete-expense' onClick={handleDelete}> X </div>
+        <div className='delete-expense' onClick={handleDelete}>
+          <DeleteForeverRoundedIcon />
+        </div>
       </div>
     );
 }
