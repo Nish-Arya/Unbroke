@@ -39,8 +39,20 @@ function Graph(props) {
     return (
       <div>
         <div className="graph-holder">
-          <h1>{props.holding.ticker.toUpperCase()} PRICE CHART</h1>
-          <Line data={data} height={250}/>
+          {/* <h1>{props.holding.ticker.toUpperCase()} PRICE CHART</h1> */}
+          <Line
+            data={data}
+            options={{
+              maintainAspectRatio: false,
+              title: {
+                display: true,
+                text: `${props.holding.ticker.toUpperCase()} PRICE CHART`,
+                padding: 15,
+                fontSize: 23,
+                fontColor: "#1A77A3",
+              },
+            }}
+          />
         </div>
       </div>
     );

@@ -9,7 +9,7 @@ function ExpenseCategories() {
     
     return (
       <div className='expenses-container'>
-        <h3 className='expenses-title'>Your Expenses</h3>
+        <h3 className='expenses-title'>YOUR EXPENSES</h3>
         <div className="expenses-column">
           {Object.values(expenses).map(expense => {
             return <Expense expense={expense} key={expense.id} />

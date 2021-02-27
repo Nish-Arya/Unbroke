@@ -33,7 +33,7 @@ function Income() {
     return (
       <div className="income-column">
         <div className="income-row">
-          <h2>Hey, {username}.</h2>
+          <h2>HEY, {username.toUpperCase()}.</h2>
         </div>
         <div className="income-row">
           <h2 className="income-category-title">Monthly Income</h2>
