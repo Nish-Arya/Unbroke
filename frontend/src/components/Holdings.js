@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {  NavLink, Route, Switch } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setHoldings } from "../store/holdings";
@@ -12,8 +12,7 @@ function Holdings() {
     const user_id = useSelector((state) => state.auth.id);
     const holdings = useSelector((state) => state.holdings);
     const dispatch = useDispatch();
-    const [loading, setLoading] = useState(true);
-    const firstHolding = Object.values(holdings)[0];
+    const firstHolding = Object.values(holdings) && Object.values(holdings)[0];
 
     useEffect(() => {
       const loadHoldings = async () => {
@@ -22,13 +21,10 @@ function Holdings() {
         if (res.ok) {
           dispatch(setHoldings(res.data.holdings));
         }
-        setLoading(false);
       };
       loadHoldings();
     }, [dispatch, user_id]);
 
-    if (loading) return null;
-    
     return (
       <div className="holdings">
         <div className="holdings-form-container">
@@ -48,37 +44,39 @@ function Holdings() {
               <div />
             </div>
             <div className="holdings-container">
-              {Object.values(holdings).map((holding) => {
-                return (
-                  <NavLink
-                    key={holding.id}
-                    to={`/stock-holdings/holding/${holding.id}`}
-                    className="holding-navlink"
-                    activeClassName="active-holding"
-                  >
-                    <Holding holding={holding} key={holding.id} />
-                  </NavLink>
-                );
-              })}
+              {Object.values(holdings) &&
+                Object.values(holdings).map((holding) => {
+                  return (
+                    <NavLink
+                      key={holding.id}
+                      to={`/stock-holdings/holding/${holding.id}`}
+                      className="holding-navlink"
+                      activeClassName="active-holding"
+                    >
+                      <Holding holding={holding} key={holding.id} />
+                    </NavLink>
+                  );
+                })}
             </div>
             <div />
           </div>
           <div className="holding-graph-container">
             <Switch>
               <Route exact path="/stock-holdings">
-                <Graph holding={firstHolding} />
+                {Object.values(holdings) && <Graph holding={firstHolding} />}
               </Route>
-              {Object.values(holdings).map((holding) => {
-                return (
-                  <Route
-                    key={holding.id}
-                    exact
-                    path={`/stock-holdings/holding/${holding.id}`}
-                  >
-                    <Graph key={holding.id} holding={holding} />
-                  </Route>
-                );
-              })}
+              {Object.values(holdings) &&
+                Object.values(holdings).map((holding) => {
+                  return (
+                    <Route
+                      key={holding.id}
+                      exact
+                      path={`/stock-holdings/holding/${holding.id}`}
+                    >
+                      <Graph key={holding.id} holding={holding} />
+                    </Route>
+                  );
+                })}
             </Switch>
           </div>
         </div>

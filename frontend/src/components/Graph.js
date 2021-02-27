@@ -6,20 +6,23 @@ function Graph(props) {
 
     const [graphData, setGraphData] = useState([]);
     const [loading, setLoading] = useState(true);
+    const ticker = props.holding?.ticker;
 
     useEffect(() => {
-      const loadGraph = async () => {
-        const res = await fetch(
-          `/api/holdings/current/${props.holding.ticker}`
-        );
-        res.data = await res.json();
-        if (res.ok) {
-          setGraphData(res.data.res.c);
-        }
-        setLoading(false);
-      };
-      loadGraph();
-    }, [props.holding.ticker]);
+      if (props.holding) {
+        const loadGraph = async () => {
+          const res = await fetch(
+            `/api/holdings/current/${props.holding.ticker}`
+          );
+          res.data = await res.json();
+          if (res.ok) {
+            setGraphData(res.data.res.c);
+          }
+          setLoading(false);
+        };
+        loadGraph();
+      }
+    }, [ticker, props.holding]);
 
     const data = {
       labels: ["5wks", "4wks", "3wks", "2wks", "1wk", "0wks"],
