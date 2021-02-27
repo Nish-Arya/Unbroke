@@ -5,7 +5,7 @@
 
 .profile {
     display: grid;
-    grid-template-columns: 1.6fr 1.2fr 2.3fr;
+    grid-template-columns: 1.4fr 1.5fr 2.3fr;
     height: 74.5vh;
 }
 
